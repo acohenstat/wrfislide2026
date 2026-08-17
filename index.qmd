@@ -24,51 +24,68 @@ format:
     margin: 0.08
     smaller: false
     footer: "[Live MetaSense Dashboard](https://acohenstat-metasense.share.connect.posit.cloud/)"
+    highlight-style: github
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
 execute:
   echo: false
   self-contained: true
 ---
 
-## Why MetaSense?
+## Why MetaSense? {.center}
 
-**Health systems often see chronic disease one condition at a time.**\
-But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly cluster in ways that increase functional decline and care complexity.
+**Health systems often see chronic disease one condition at a time.**
 
-**MetaSense goal:** use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk
+But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly **cluster together** in ways that increase functional decline and care complexity.
+
+::: {style="margin-top: 1.5em; font-size: 1.05em;"}
+**MetaSense goal:**\
+Use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk
+:::
 
 ::: callout-note
-**Use case:** screening and population-health insight — not diagnosis or automated treatment decisions.
+**Use case:** screening and population-health insight — *not* diagnosis or automated treatment decisions.
 :::
 
 ------------------------------------------------------------------------
 
-## MetS and Cancer
+## MetS and Cancer {.center}
 
-![](cancer1.png)
+![](images/cancer1.png){width="85%"}
 
 ------------------------------------------------------------------------
 
-## MetS and Cancer
+## MetS and Cancer: Mechanistic Links {.center}
 
-![](cancer2.png)
+![](images/cancer2.png){width="85%"}
 
-## MetS and Cancer
+------------------------------------------------------------------------
 
-![](cancer3.png)
+## MetS and Cancer: Risk Stratification {.center}
 
-## OA Burden
+![](images/cancer3.png){width="85%"}
 
-![](oa1.png)
+------------------------------------------------------------------------
 
-## OA Burden
+## OA Burden and Functional Decline {.center}
 
-![](oa2.png)
+![](images/oa1.png){width="85%"}
 
-## Project Architecture
+------------------------------------------------------------------------
 
-![](metasense.png){fig-align="center"}
+## OA Burden: Activity Patterns {.center}
 
+![](images/oa2.png){width="85%"}
+
+## Project Architecture {.center}
+
+::: {.callout-tip}
 **Key protection:** diagnoses used to define LCA classes were **not** used as ML predictors.
+:::
+
+::: {style="font-size: 0.9em; margin-top: 1em;"}
+*Architecture diagram: LCA phenotype discovery → Wearable-based stratification → Interactive dashboard deployment*
+:::
 
 ------------------------------------------------------------------------
 
@@ -103,15 +120,17 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 
 ## Five Multimorbidity Phenotypes {.smaller}
 
-| Phenotype | Prevalence | Defining pattern |
-|----------------------|---------------------------:|----------------------|
+| Phenotype | Prevalence | Defining Pattern |
+|:---|---:|:---|
 | **High Multidomain Burden** | **33.2%** | High MH, obesity, HTN, diabetes, OA, cancer enrichment |
-| Hypertension-Dominant | 21.9% | Nearly universal HTN, lower diabetes/dyslipidemia |
-| Obesity-Dominant | 19.6% | Universal obesity, lower broader cardiometabolic burden |
-| Diabetes-Dominant | 14.9% | Universal diabetes, moderate HTN |
-| Dyslipidemia/OA-Dominant | 10.5% | Dyslipidemia with OA and moderate HTN |
+| Hypertension-Dominant | 21.9% | Nearly universal HTN; lower diabetes/dyslipidemia |
+| Obesity-Dominant | 19.6% | Universal obesity; lower broader cardiometabolic burden |
+| Diabetes-Dominant | 14.9% | Universal diabetes; moderate HTN |
+| Dyslipidemia/OA-Dominant | 10.5% | Dyslipidemia with OA; moderate HTN |
 
-**LCA quality:** entropy = **0.769**; mean max posterior probability = **0.849**.
+::: {style="margin-top: 1em; font-size: 0.9em;"}
+**LCA Model Quality:** entropy = **0.769** | mean max posterior probability = **0.849**
+:::
 
 ------------------------------------------------------------------------
 
@@ -150,47 +169,67 @@ Plus: age, sex at birth, race/ethnicity, education, marital status, and broad ge
 
 ## Tuned XGBoost Performance {.smaller}
 
-| Metric      | Held-out Test Result |
-|-------------|---------------------:|
-| ROC AUC     |            **0.691** |
-| Sensitivity |            **0.715** |
-| Specificity |            **0.551** |
-| PPV         |            **0.389** |
-| NPV         |            **0.829** |
-| F1 score    |            **0.504** |
-| Brier score |            **0.185** |
+| Metric | Held-out Test |
+|:---|---:|
+| **ROC AUC** | **0.691** |
+| **Sensitivity** | **0.715** ✓ |
+| **Specificity** | **0.551** |
+| **PPV** | **0.389** |
+| **NPV** | **0.829** ✓ |
+| **F1 score** | **0.504** |
+| **Brier score** | **0.185** |
 
-**Interpretation:** moderate but stable screening performance.\
-Calibration AUC = **0.687**; test AUC = **0.691**.
+::: {style="margin-top: 1em; font-size: 0.9em; line-height: 1.6;"}
+**Interpretation:** Moderate but stable screening performance.\
+High NPV indicates strong negative predictive value for rule-out decisions.\
+Calibration AUC = **0.687** | test AUC = **0.691**
+:::
 
 ------------------------------------------------------------------------
 
 ## Trust Layer: Calibration + Conformal Prediction {.smaller}
 
-**Risk gradient:** observed High Multidomain Burden increased from **5.4%** in the lowest predicted-risk decile to **54.8%** in the highest.
+::: {style="margin-bottom: 1.2em;"}
+**Risk gradient:** Observed High Multidomain Burden increases from **5.4%** (lowest risk decile) → **54.8%** (highest decile)
+:::
 
 **Class-conditional conformal prediction at 90% nominal coverage:**
 
-| Output | n (%) | Meaning |
-|----------------------|---------------------------:|----------------------|
-| `{Other}` | 600 (24.9%) | Lower-burden pattern supported |
-| `{HighBurden}` | 312 (13.0%) | Elevated-burden signal |
-| `{HighBurden, Other}` | 1,498 (62.2%) | Uncertain; more information recommended |
+| Output | n (%) | Clinical Meaning |
+|:---|---:|:---|
+| `{Other}` | 600 (24.9%) | ✓ Lower-burden pattern supported |
+| `{HighBurden}` | 312 (13.0%) | ⚠ Elevated-burden signal |
+| `{HighBurden, Other}` | 1,498 (62.2%) | ❓ Uncertain; more info recommended |
 
-Coverage: **90.8% HighBurden**, **91.2% Other**.
+::: {style="margin-top: 1em; font-size: 0.9em;"}
+**Coverage achieved:** 90.8% (HighBurden) | 91.2% (Other)
+:::
 
 ------------------------------------------------------------------------
 
 ## Florida Translation and Next Steps {.smaller}
 
-**Florida subgroup:** 497 participants\
-High Multidomain Burden: **32.2%** vs **28.4%** outside Florida.
+::: {style="margin-bottom: 1.2em;"}
+**Florida subgroup (n=497)**\
+High Multidomain Burden: **32.2%** vs **28.4%** nationally
+:::
 
-Florida participants had:
+::: {style="columns: 2;"}
+**Activity Differences:**
 
--   lower median daily steps: **5,670 vs 5,982**
--   more low-activity days: **17.3% vs 15.6%**
--   fewer ≥10,000-step days: **7.7% vs 9.8%**
+- Lower median daily steps:\
+  **5,670** vs **5,982**
+  
+- More low-activity days:\
+  **17.3%** vs **15.6%**
+  
+- Fewer ≥10,000-step days:\
+  **7.7%** vs **9.8%**
 
-**Northwest Florida:** current All of Us wearable sample is too sparse (n=5).\
-**Next phase:** validate MetaSense with regional clinical/community partners and connect the saved XGBoost + conformal model to the interactive dashboard.
+**Next Phase:**
+
+✓ Validate with regional partners\
+✓ Deploy XGBoost model\
+✓ Integrate conformal predictions\
+✓ Expand Northwest Florida (n=5 → validation sample)
+:::

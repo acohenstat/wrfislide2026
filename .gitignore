@@ -1,0 +1,13 @@
+# Output files
+index.html
+index_files/
+*.log
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Quarto cache
+.quarto/
