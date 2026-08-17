@@ -230,3 +230,19 @@ High Multidomain Burden: **32.2%** vs **28.4%** nationally
 ✓ Improve and Deploy XGBoost model\
 ✓ Expand Northwest Florida (n=5 → validation sample)
 :::
+
+## MetaSense: From National Data to Regional Action
+
+### Explore the Interactive Prototype
+
+[**Launch the Live MetaSense Dashboard**](https://acohenstat-metasense.share.connect.posit.cloud/)
+
+**MetaSense demonstrates:**
+
+- Data-driven discovery of five multimorbidity phenotypes
+- Wearable-based prediction of High Multidomain Burden
+- Calibrated risk stratification
+- Class-conditional conformal uncertainty
+- Florida-focused population health translation
+
+**University of West Florida**
