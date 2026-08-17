@@ -6,7 +6,7 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Achraf Cohen, PhD">
@@ -178,11 +178,14 @@ Emmanuel Paalam
 </div>
 
 </section>
-<section id="why-metasense" class="slide level2">
+<section id="why-metasense" class="slide level2 center">
 <h2>Why MetaSense?</h2>
-<p><strong>Health systems often see chronic disease one condition at a time.</strong><br>
-But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly cluster in ways that increase functional decline and care complexity.</p>
-<p><strong>MetaSense goal:</strong> use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk</p>
+<p><strong>Health systems often see chronic disease one condition at a time.</strong></p>
+<p>But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly <strong>cluster together</strong> in ways that increase functional decline and care complexity.</p>
+<div style="margin-top: 1.5em; font-size: 1.05em;">
+<p><strong>MetaSense goal:</strong><br>
+Use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk</p>
+</div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -192,35 +195,47 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Use case:</strong> screening and population-health insight — not diagnosis or automated treatment decisions.</p>
+<p><strong>Use case:</strong> screening and population-health insight — <em>not</em> diagnosis or automated treatment decisions.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="mets-and-cancer" class="slide level2">
+<section id="mets-and-cancer" class="slide level2 center">
 <h2>MetS and Cancer</h2>
 
-<img data-src="cancer1.png" class="r-stretch"></section>
-<section id="mets-and-cancer-1" class="slide level2">
-<h2>MetS and Cancer</h2>
+<img data-src="images/cancer1.png" style="width:85.0%" class="r-stretch"></section>
+<section id="mets-and-cancer-mechanistic-links" class="slide level2 center">
+<h2>MetS and Cancer: Mechanistic Links</h2>
 
-<img data-src="cancer2.png" class="r-stretch"></section>
-<section id="mets-and-cancer-2" class="slide level2">
-<h2>MetS and Cancer</h2>
+<img data-src="images/cancer2.png" style="width:85.0%" class="r-stretch"></section>
+<section id="mets-and-cancer-risk-stratification" class="slide level2 center">
+<h2>MetS and Cancer: Risk Stratification</h2>
 
-<img data-src="cancer3.png" class="r-stretch"></section>
-<section id="oa-burden" class="slide level2">
-<h2>OA burden</h2>
+<img data-src="images/cancer3.png" style="width:85.0%" class="r-stretch"></section>
+<section id="oa-burden-and-functional-decline" class="slide level2 center">
+<h2>OA Burden and Functional Decline</h2>
 
-<img data-src="oa1.png" class="r-stretch"></section>
-<section id="oa-burden-1" class="slide level2">
-<h2>OA Burden</h2>
+<img data-src="images/oa1.png" style="width:85.0%" class="r-stretch"></section>
+<section id="oa-burden-activity-patterns" class="slide level2 center">
+<h2>OA Burden: Activity Patterns</h2>
 
-<img data-src="oa2.png" class="r-stretch"></section>
-<section id="project-architecture" class="slide level2">
+<img data-src="images/oa2.png" style="width:85.0%" class="r-stretch"></section>
+<section id="project-architecture" class="slide level2 center">
 <h2>Project Architecture</h2>
 
-<img data-src="metasense.png" class="quarto-figure quarto-figure-center r-stretch"><p><strong>Key protection:</strong> diagnoses used to define LCA classes were <strong>not</strong> used as ML predictors.</p>
+<img data-src="images/metasense.png" style="width:90.0%" class="r-stretch"><div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Key protection:</strong> diagnoses used to define LCA classes were <strong>not</strong> used as ML predictors.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="data-sources-and-cohorts" class="slide level2 smaller">
 <h2>Data Sources and Cohorts</h2>
@@ -308,46 +323,48 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 <h2>Five Multimorbidity Phenotypes</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 38%">
-<col style="width: 30%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Phenotype</th>
+<th style="text-align: left;">Phenotype</th>
 <th style="text-align: right;">Prevalence</th>
-<th>Defining pattern</th>
+<th style="text-align: left;">Defining Pattern</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>High Multidomain Burden</strong></td>
+<td style="text-align: left;"><strong>High Multidomain Burden</strong></td>
 <td style="text-align: right;"><strong>33.2%</strong></td>
-<td>High MH, obesity, HTN, diabetes, OA, cancer enrichment</td>
+<td style="text-align: left;">High MH, obesity, HTN, diabetes, OA, cancer enrichment</td>
 </tr>
 <tr class="even">
-<td>Hypertension-Dominant</td>
+<td style="text-align: left;">Hypertension-Dominant</td>
 <td style="text-align: right;">21.9%</td>
-<td>Nearly universal HTN, lower diabetes/dyslipidemia</td>
+<td style="text-align: left;">Nearly universal HTN; lower diabetes/dyslipidemia</td>
 </tr>
 <tr class="odd">
-<td>Obesity-Dominant</td>
+<td style="text-align: left;">Obesity-Dominant</td>
 <td style="text-align: right;">19.6%</td>
-<td>Universal obesity, lower broader cardiometabolic burden</td>
+<td style="text-align: left;">Universal obesity; lower broader cardiometabolic burden</td>
 </tr>
 <tr class="even">
-<td>Diabetes-Dominant</td>
+<td style="text-align: left;">Diabetes-Dominant</td>
 <td style="text-align: right;">14.9%</td>
-<td>Universal diabetes, moderate HTN</td>
+<td style="text-align: left;">Universal diabetes; moderate HTN</td>
 </tr>
 <tr class="odd">
-<td>Dyslipidemia/OA-Dominant</td>
+<td style="text-align: left;">Dyslipidemia/OA-Dominant</td>
 <td style="text-align: right;">10.5%</td>
-<td>Dyslipidemia with OA and moderate HTN</td>
+<td style="text-align: left;">Dyslipidemia with OA; moderate HTN</td>
 </tr>
 </tbody>
 </table>
-<p><strong>LCA quality:</strong> entropy = <strong>0.769</strong>; mean max posterior probability = <strong>0.849</strong>.</p>
+<div style="margin-top: 1em; font-size: 0.9em;">
+<p><strong>LCA Model Quality:</strong> entropy = <strong>0.769</strong> | mean max posterior probability = <strong>0.849</strong></p>
+</div>
 </section>
 <section id="why-focus-ml-on-high-multidomain-burden" class="slide level2 smaller">
 <h2>Why Focus ML on High Multidomain Burden?</h2>
@@ -389,93 +406,109 @@ Accuracy ≈ <strong>0.42</strong>; macro-F1 ≈ <strong>0.34</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Metric</th>
-<th style="text-align: right;">Held-out Test Result</th>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: right;">Held-out Test</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ROC AUC</td>
+<td style="text-align: left;"><strong>ROC AUC</strong></td>
 <td style="text-align: right;"><strong>0.691</strong></td>
 </tr>
 <tr class="even">
-<td>Sensitivity</td>
-<td style="text-align: right;"><strong>0.715</strong></td>
+<td style="text-align: left;"><strong>Sensitivity</strong></td>
+<td style="text-align: right;"><strong>0.715</strong> ✓</td>
 </tr>
 <tr class="odd">
-<td>Specificity</td>
+<td style="text-align: left;"><strong>Specificity</strong></td>
 <td style="text-align: right;"><strong>0.551</strong></td>
 </tr>
 <tr class="even">
-<td>PPV</td>
+<td style="text-align: left;"><strong>PPV</strong></td>
 <td style="text-align: right;"><strong>0.389</strong></td>
 </tr>
 <tr class="odd">
-<td>NPV</td>
-<td style="text-align: right;"><strong>0.829</strong></td>
+<td style="text-align: left;"><strong>NPV</strong></td>
+<td style="text-align: right;"><strong>0.829</strong> ✓</td>
 </tr>
 <tr class="even">
-<td>F1 score</td>
+<td style="text-align: left;"><strong>F1 score</strong></td>
 <td style="text-align: right;"><strong>0.504</strong></td>
 </tr>
 <tr class="odd">
-<td>Brier score</td>
+<td style="text-align: left;"><strong>Brier score</strong></td>
 <td style="text-align: right;"><strong>0.185</strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Interpretation:</strong> moderate but stable screening performance.<br>
-Calibration AUC = <strong>0.687</strong>; test AUC = <strong>0.691</strong>.</p>
+<div style="margin-top: 1em; font-size: 0.9em; line-height: 1.6;">
+<p><strong>Interpretation:</strong> Moderate but stable screening performance.<br>
+High NPV indicates strong negative predictive value for rule-out decisions.<br>
+Calibration AUC = <strong>0.687</strong> | test AUC = <strong>0.691</strong></p>
+</div>
 </section>
 <section id="trust-layer-calibration-conformal-prediction" class="slide level2 smaller">
 <h2>Trust Layer: Calibration + Conformal Prediction</h2>
-<p><strong>Risk gradient:</strong> observed High Multidomain Burden increased from <strong>5.4%</strong> in the lowest predicted-risk decile to <strong>54.8%</strong> in the highest.</p>
+<div style="margin-bottom: 1.2em;">
+<p><strong>Risk gradient:</strong> Observed High Multidomain Burden increases from <strong>5.4%</strong> (lowest risk decile) → <strong>54.8%</strong> (highest decile)</p>
+</div>
 <p><strong>Class-conditional conformal prediction at 90% nominal coverage:</strong></p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 38%">
-<col style="width: 30%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Output</th>
+<th style="text-align: left;">Output</th>
 <th style="text-align: right;">n (%)</th>
-<th>Meaning</th>
+<th style="text-align: left;">Clinical Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>{Other}</code></td>
+<td style="text-align: left;"><code>{Other}</code></td>
 <td style="text-align: right;">600 (24.9%)</td>
-<td>Lower-burden pattern supported</td>
+<td style="text-align: left;">✓ Lower-burden pattern supported</td>
 </tr>
 <tr class="even">
-<td><code>{HighBurden}</code></td>
+<td style="text-align: left;"><code>{HighBurden}</code></td>
 <td style="text-align: right;">312 (13.0%)</td>
-<td>Elevated-burden signal</td>
+<td style="text-align: left;">⚠ Elevated-burden signal</td>
 </tr>
 <tr class="odd">
-<td><code>{HighBurden, Other}</code></td>
+<td style="text-align: left;"><code>{HighBurden, Other}</code></td>
 <td style="text-align: right;">1,498 (62.2%)</td>
-<td>Uncertain; more information recommended</td>
+<td style="text-align: left;">❓ Uncertain; more info recommended</td>
 </tr>
 </tbody>
 </table>
-<p>Coverage: <strong>90.8% HighBurden</strong>, <strong>91.2% Other</strong>.</p>
+<div style="margin-top: 1em; font-size: 0.9em;">
+<p><strong>Coverage achieved:</strong> 90.8% (HighBurden) | 91.2% (Other)</p>
+</div>
 </section>
 <section id="florida-translation-and-next-steps" class="slide level2 smaller">
 <h2>Florida Translation and Next Steps</h2>
-<p><strong>Florida subgroup:</strong> 497 participants<br>
-High Multidomain Burden: <strong>32.2%</strong> vs <strong>28.4%</strong> outside Florida.</p>
-<p>Florida participants had:</p>
+<div style="margin-bottom: 1.2em;">
+<p><strong>Florida subgroup (n=497)</strong><br>
+High Multidomain Burden: <strong>32.2%</strong> vs <strong>28.4%</strong> nationally</p>
+</div>
+<div style="columns: 2;">
+<p><strong>Activity Differences:</strong></p>
 <ul>
-<li>lower median daily steps: <strong>5,670 vs 5,982</strong></li>
-<li>more low-activity days: <strong>17.3% vs 15.6%</strong></li>
-<li>fewer ≥10,000-step days: <strong>7.7% vs 9.8%</strong></li>
+<li><p>Lower median daily steps:<br>
+<strong>5,670</strong> vs <strong>5,982</strong></p></li>
+<li><p>More low-activity days:<br>
+<strong>17.3%</strong> vs <strong>15.6%</strong></p></li>
+<li><p>Fewer ≥10,000-step days:<br>
+<strong>7.7%</strong> vs <strong>9.8%</strong></p></li>
 </ul>
-<p><strong>Northwest Florida:</strong> current All of Us wearable sample is too sparse (n=5).<br>
-<strong>Next phase:</strong> validate MetaSense with regional clinical/community partners and connect the saved XGBoost + conformal model to the interactive dashboard.</p>
+<p><strong>Next Phase:</strong></p>
+<p>✓ Validate with regional partners<br>
+✓ Improve and Deploy XGBoost model<br>
+✓ Expand Northwest Florida (n=5 → validation sample)</p>
+</div>
 
 </section>
     </div>

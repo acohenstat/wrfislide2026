@@ -79,12 +79,10 @@ Use large-scale clinical data to discover multimorbidity profiles, then use pass
 
 ## Project Architecture {.center}
 
+![](images/metasense.png){width="90%"}
+
 ::: {.callout-tip}
 **Key protection:** diagnoses used to define LCA classes were **not** used as ML predictors.
-:::
-
-::: {style="font-size: 0.9em; margin-top: 1em;"}
-*Architecture diagram: LCA phenotype discovery → Wearable-based stratification → Interactive dashboard deployment*
 :::
 
 ------------------------------------------------------------------------
@@ -229,7 +227,6 @@ High Multidomain Burden: **32.2%** vs **28.4%** nationally
 **Next Phase:**
 
 ✓ Validate with regional partners\
-✓ Deploy XGBoost model\
-✓ Integrate conformal predictions\
+✓ Improve and Deploy XGBoost model\
 ✓ Expand Northwest Florida (n=5 → validation sample)
 :::
